@@ -1,56 +1,105 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
-    <!-- General meta tags needed-->
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Needed for responsive design -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- If you want custom browser colors on mobile -->
-    <meta name="theme-color" content="#1843c1" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#1843c1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuk Norris joke</title>
 
-    <title></title>
-
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="dist/style.css" />
+    <script src="dist/bundle.js"></script>
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-
-    <!-- CSS File -->
-    <link rel="stylesheet" href="dist/style.css?cb=1572492103778" />
   </head>
+
   <body>
-    <main>
-      <section class="content">
-        <h1>Front-end Boilerplate</h1>
-        <h2>Using Sass and Gulp</h2>
+    <div class="root">
+      <div class="container">
+        <div class="search">
+          <h3>MSI 2020</h3>
+          <div class="greeting">
+            <h1>Hey!</h1>
+            <h2>Let’s try to find a joke for you:</h2>
+          </div>
+          <div class="search__type">
+            <label class="checkbox__container"
+              >Random
+              <input class="checkbox" type="checkbox" checked="checked" />
+              <span class="checkbox__checkmark">
+                <span class="checkbox__checkmark--checked"></span
+              ></span>
+            </label>
 
-        <p>
-          Here's a quick set-up guide:
-        </p>
+            <label class="checkbox__container"
+              >From categories
+              <input class="checkbox" type="checkbox" />
+              <span class="checkbox__checkmark">
+                <span class="checkbox__checkmark--checked"></span
+              ></span>
+            </label>
 
-        <ul>
-          <li>Clone Git repo</li>
-          <li>Install by running "npm install" on the commmand line</li>
-          <li>Run "gulp" on the command line.</li>
-        </ul>
-      </section>
+            <div class="categories__container">
+              <ul class="categories">
+                <li>One</li>
+                <li>Glskdf</li>
+                <li>fasdfsd</li>
+                <li>jfjfg</li>
+                <li>twedf</li>
+              </ul>
+            </div>
 
-      <aside>
-        <h3>Project Info</h3>
-        <p>
-          This is a starter front-end project which will compile SCSS and JS
-          files using Gulp 4.
-        </p>
-      </aside>
-    </main>
+            <label class="checkbox__container"
+              >Search
+              <input class="checkbox" type="checkbox" />
+              <span class="checkbox__checkmark">
+                <span class="checkbox__checkmark--checked"></span
+              ></span>
+            </label>
 
-    <!-- JavaScript File -->
-    <script src="dist/all.js?cb=1572492103778"></script>
+            <input class="search__button" type="button" value="Get a joke" />
+          </div>
+          <div class="search__result">
+            <ul>
+              <li class="joke">
+                <div class="heart">
+                  <img src="src/assets/img/emptyHeart.svg" alt="emptyHeart" />
+                </div>
+                <div class="raw-container">
+                  <div class="joke__icon">
+                    <img src="src/assets/img/message.svg" alt="message" />
+                  </div>
+                  <div class="joke__body">
+                    <div class="joke__id">
+                      ID:
+                      <a href="index.html"
+                        >XNaAxUduSw6zANDaIEab7A<img
+                          src="src/assets/img/link.svg"
+                          alt="link"
+                      /></a>
+                    </div>
+                    <div class="joke__text">
+                      No one truly knows who's Chuck Norris' real father. No one
+                      is biologically strong enough for this. He must've
+                      conceived himself.
+                    </div>
+                    <div class="joke__footer">
+                      <div class="joke__updated">
+                        Last update: 1923 hours ago
+                      </div>
+                      <div class="joke__category">celebrity</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="joke__favorite"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="favorite"></div>
+        <div class="favorite"></div>
+      </div>
+    </div>
   </body>
 </html>

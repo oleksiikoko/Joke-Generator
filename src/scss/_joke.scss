@@ -1,0 +1,88 @@
+@import "colors";
+
+.joke {
+  background-color: $ltGray;
+  border-radius: 20px;
+  padding: 67px 40px 40px 40px;
+  position: relative;
+  list-style: none;
+
+  .heart {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    min-width: 40px;
+    height: 40px;
+
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    margin-left: 20px;
+  }
+
+  &__id {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    color: $dkGray;
+    margin-bottom: 5px;
+
+    a {
+      img {
+        display: inline;
+        margin-left: 3px;
+      }
+
+      &:link,
+      &:visited {
+        color: #8ea7ff;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23px;
+  }
+
+  &__updated {
+    display: inline;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    color: $dkGray;
+  }
+
+  &__category {
+    display: inline;
+    padding: 6px 20px;
+
+    background: $white;
+    border-radius: 6px;
+
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: $black;
+  }
+}

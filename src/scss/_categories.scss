@@ -1,0 +1,26 @@
+@import "colors";
+
+.categories {
+  li {
+    border: 2px solid #f8f8f8;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: inline;
+    padding: 6px 15px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: $dkGray;
+
+    cursor: pointer;
+
+    &:hover {
+      background: $ltGray;
+      color: $black;
+    }
+  }
+}

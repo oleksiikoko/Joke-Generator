@@ -1,0 +1,22 @@
+@import "colors";
+
+.search__button {
+  width: 152px;
+  height: 42px;
+
+  background: linear-gradient(92.01deg, #8ea7ff 0%, #7291ff 100%);
+  border-radius: 10px;
+  border: none;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $white;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
