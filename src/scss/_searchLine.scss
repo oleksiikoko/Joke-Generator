@@ -1,0 +1,13 @@
+@import "colors";
+
+.search__line {
+  display: none;
+  border: 2px solid $black;
+  border-radius: 10px;
+  height: 42px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}

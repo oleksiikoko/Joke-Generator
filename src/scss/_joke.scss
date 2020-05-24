@@ -1,5 +1,9 @@
 @import "colors";
 
+ul {
+  padding: 0;
+}
+
 .joke {
   background-color: $ltGray;
   border-radius: 20px;
@@ -7,11 +11,25 @@
   position: relative;
   list-style: none;
 
+  &--favorite {
+    background-color: $white;
+    padding: 47px 20px 20px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
   .heart {
     position: absolute;
     top: 40px;
     right: 40px;
     cursor: pointer;
+
+    &--favorite {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
   }
 
   &__icon {
@@ -23,10 +41,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--favorite {
+      background: $ltGray;
+    }
   }
 
   &__body {
     margin-left: 20px;
+    width: 100%;
   }
 
   &__id {
@@ -53,6 +76,11 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 26px;
+
+    &--favorite {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   &__footer {
@@ -60,6 +88,10 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 23px;
+
+    &--favorite {
+      margin-top: 20px;
+    }
   }
 
   &__updated {

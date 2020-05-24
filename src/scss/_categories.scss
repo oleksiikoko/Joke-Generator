@@ -1,6 +1,9 @@
 @import "colors";
 
 .categories {
+  &__container {
+    display: none;
+  }
   li {
     border: 2px solid #f8f8f8;
     box-sizing: border-box;

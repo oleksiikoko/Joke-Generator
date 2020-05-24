@@ -6,7 +6,7 @@
     <title>Chuk Norris joke</title>
 
     <link rel="stylesheet" href="dist/style.css" />
-    <script src="dist/bundle.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -22,24 +22,24 @@
             <h1>Hey!</h1>
             <h2>Let’s try to find a joke for you:</h2>
           </div>
-          <div class="search__type">
-            <label class="checkbox__container"
+          <div class="search__type" id="search__type">
+            <!-- <label class="checkbox__container"
               >Random
-              <input class="checkbox" type="checkbox" checked="checked" />
+              <input class="checkbox" type="checkbox" checked="true" />
               <span class="checkbox__checkmark">
                 <span class="checkbox__checkmark--checked"></span
               ></span>
-            </label>
+            </label> -->
 
-            <label class="checkbox__container"
+            <!-- <label class="checkbox__container"
               >From categories
               <input class="checkbox" type="checkbox" />
               <span class="checkbox__checkmark">
                 <span class="checkbox__checkmark--checked"></span
               ></span>
-            </label>
+            </label> -->
 
-            <div class="categories__container">
+            <!-- <div class="categories__container">
               <ul class="categories">
                 <li>One</li>
                 <li>Glskdf</li>
@@ -47,19 +47,26 @@
                 <li>jfjfg</li>
                 <li>twedf</li>
               </ul>
-            </div>
+            </div> -->
 
-            <label class="checkbox__container"
+            <!-- <input
+              class="search__line"
+              type="text"
+              id="search__line"
+              placeholder="Free text search"
+            /> -->
+
+            <!-- <label class="checkbox__container"
               >Search
               <input class="checkbox" type="checkbox" />
               <span class="checkbox__checkmark">
                 <span class="checkbox__checkmark--checked"></span
               ></span>
-            </label>
+            </label> -->
 
-            <input class="search__button" type="button" value="Get a joke" />
+            <!-- <input class="search__button" type="button" value="Get a joke" /> -->
           </div>
-          <div class="search__result">
+          <div class="search__result" id="search__result">
             <ul>
               <li class="joke">
                 <div class="heart">
@@ -93,13 +100,49 @@
                 </div>
               </li>
 
-              <li class="joke__favorite"></li>
+              <!-- <li class="joke__favorite"></li> -->
             </ul>
           </div>
         </div>
-        <div class="favorite"></div>
-        <div class="favorite"></div>
+        <div class="favorite">
+          <h3>Favorite</h3>
+          <ul>
+            <li class="joke joke--favorite">
+              <div class="heart--favorite">
+                <img src="src/assets/img/emptyHeart.svg" alt="emptyHeart" />
+              </div>
+              <div class="raw-container">
+                <div class="joke__icon joke__icon--favorite">
+                  <img src="src/assets/img/message.svg" alt="message" />
+                </div>
+                <div class="joke__body">
+                  <div class="joke__id">
+                    ID:
+                    <a href="index.html"
+                      >XNaAxUduSw6zANDaIEab7A<img
+                        src="src/assets/img/link.svg"
+                        alt="link"
+                    /></a>
+                  </div>
+                  <div class="joke__text joke__text--favorite">
+                    No one truly knows who's Chuck Norris' real father. No one
+                    is biologically strong enough for this. He must've conceived
+                    himself.
+                  </div>
+                  <div class="joke__footer joke__footer--favorite">
+                    <div class="joke__updated">
+                      Last update: 1923 hours ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- <li class="joke__favorite"></li> -->
+          </ul>
+        </div>
       </div>
     </div>
   </body>
+  <script src="dist/bundle.js"></script>
 </html>
