@@ -4,7 +4,7 @@ import SearchLine from "./SearchLine";
 import GetJokeButton from "./GetJokeButton";
 
 class SearchParameters {
-  constructor(domObjectForInsert, onSearch) {
+  constructor(domObjectForInsert, onSearch, categories) {
     this.curCheckboxItem = 0;
     this.onSearch = onSearch;
 
@@ -17,7 +17,7 @@ class SearchParameters {
       "From categories",
       () => (this.checkbox = 1)
     );
-    this.categories = new Categories(["ladsfkjfa;lds", "l;fakdjs;"]);
+    this.categories = new Categories(categories);
     this.searchCheckbox = new Checkbox("Search", () => (this.checkbox = 2));
     this.searchLine = new SearchLine();
     this.getJokeButton = new GetJokeButton(this.search.bind(this));
@@ -58,13 +58,13 @@ class SearchParameters {
   search() {
     switch (this.curCheckboxItem) {
       case 0:
-        this.onSearch("random");
+        this.onSearch("/random");
         break;
       case 1:
-        this.onSearch(`random?category=${this.categories.category}`);
+        this.onSearch(`/random?category=${this.categories.category}`);
         break;
       case 2:
-        this.onSearch(`search?query==${this.searchLine.value}`);
+        this.onSearch(`/search?query=${this.searchLine.value}`);
         break;
     }
   }

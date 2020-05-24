@@ -1,23 +1,36 @@
 import FavoriteHeart from "./FavoriteHeart";
-class SearchResult {
-  constructor(domObjectForInsert, data, onAddToFavorite, onRemoveFromFavorite) {
-    this.ulContainer = document.createElement("ul");
 
-    data.map((item) => {
+class Favorite {
+  constructor(domObjectForInsert) {
+    this.ulContainer = document.createElement("ul");
+    this.ulContainer.id = "favorite-ul";
+    domObjectForInsert.appendChild(this.ulContainer);
+
+    this.ulContainer = document.getElementById("favorite-ul");
+  }
+
+  onRemoveFromFavorite(id) {
+    window.favoriteList.removeFavorite(id);
+    this.render();
+  }
+
+  render() {
+    this.ulContainer.innerHTML = "";
+    window.favoriteList.getList().map((item) => {
       let li = document.createElement("li");
-      li.className = "joke";
+      li.className = "joke joke--favorite";
 
       let heart = new FavoriteHeart(
         item.id,
-        (id) => onAddToFavorite(data.find((element) => element.id === id)),
-        onRemoveFromFavorite
+        undefined,
+        this.onRemoveFromFavorite.bind(this)
       ).heartNode;
 
       let rawContainer = document.createElement("div");
       rawContainer.className = "raw-container";
-      rawContainer.innerHTML = `<div class="joke__icon">
-      <img src="src/assets/img/message.svg" alt="message" />
-      </div>`;
+      rawContainer.innerHTML = `<div class="joke__icon joke__icon--favorite">
+        <img src="src/assets/img/message.svg" alt="message" />
+        </div>`;
 
       let jokeBody = document.createElement("div");
       jokeBody.className = "joke__body";
@@ -25,27 +38,23 @@ class SearchResult {
       let jokeId = document.createElement("div");
       jokeId.className = "joke__id";
       jokeId.innerHTML = `ID:
-      <a href="${item.url}"
-        >${item.id}<img
-          src="src/assets/img/link.svg"
-          alt="link"
-      /></a>`;
+        <a href="${item.url}"
+          >${item.id}<img
+            src="src/assets/img/link.svg"
+            alt="link"
+        /></a>`;
 
       let jokeText = document.createElement("div");
-      jokeText.className = "joke__text";
+      jokeText.className = "joke__text joke__text--favorite";
       jokeText.innerHTML = item.value;
 
       let jokeFooter = document.createElement("div");
-      jokeFooter.className = "joke__footer";
+      jokeFooter.className = "joke__footer joke__footer--favorite";
       let jokeUpdated = document.createElement("div");
       jokeUpdated.className = "joke__updated";
       jokeUpdated.innerHTML = `Last update: ${item.created_at}`;
 
-      let jokeCategory = document.createElement("div");
-      jokeCategory.className = "joke__category";
-      jokeCategory.innerHTML = item.categories[0];
       jokeFooter.appendChild(jokeUpdated);
-      item.categories[0] && jokeFooter.appendChild(jokeCategory);
 
       jokeBody.appendChild(jokeId);
       jokeBody.appendChild(jokeText);
@@ -58,12 +67,7 @@ class SearchResult {
 
       this.ulContainer.appendChild(li);
     });
-
-    domObjectForInsert.innerHTML = "";
-    domObjectForInsert.appendChild(this.ulContainer);
   }
-
-  // onHeartClick(id)
 }
 
-export default SearchResult;
+export default Favorite;

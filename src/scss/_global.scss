@@ -85,3 +85,9 @@ select {
   display: flex;
   height: 100vh;
 }
+
+.root {
+  max-width: 100%;
+  background-color: #fff;
+  z-index: 2;
+}
